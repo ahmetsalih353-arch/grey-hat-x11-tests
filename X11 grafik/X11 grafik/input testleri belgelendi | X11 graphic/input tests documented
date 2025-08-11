@@ -1,0 +1,35 @@
+# 🖥️ X11 Testleri | X11 Testing
+
+Bu belge, izole VM ortamında X11 grafik sunucusunun davranışlarını ve güvenlik açıklarını gözlemlemek amacıyla yapılan testleri içerir. Amaç; input/grafik etkileşimlerini analiz etmek ve potansiyel zafiyetleri belgelemektir.
+
+This document contains tests performed in an isolated VM environment to observe the behavior and vulnerabilities of the X11 graphical server. The goal is to analyze input/graphic interactions and document potential weaknesses.
+
+---
+
+## ⚙️ Test Ortamı | Test Environment
+
+- VM: Arch tabanlı sistem, X11 aktif  
+- Araçlar: `xev`, `xinput`, `xhost`, `wireshark`  
+- Hedef: Input olaylarının izlenmesi, yetkisiz erişim denemeleri
+
+---
+
+## 📊 Gözlemler | Observations
+
+- `xev` ile mouse ve klavye olayları detaylı şekilde izlendi  
+- `xhost +` komutu ile sistem dışı erişim açıldığında güvenlik riski oluştu  
+- Wireshark ile X11 trafiği analiz edildi, şifrelenmemiş veri akışı gözlendi
+
+---
+
+## 🛡️ Etik Uyarı | Ethical Disclaimer
+
+Bu testler yalnızca eğitim ve belgeleme amaçlıdır. Gerçek sistemlerde X11 üzerinden izinsiz erişim denemeleri kesinlikle önerilmez.  
+These tests are for educational and documentation purposes only. Unauthorized X11 access attempts on real systems are strictly discouraged.
+
+---
+
+## 📌 Yazar | Author
+
+**Ahmet Salih** – VM kurulumları, grafik/input gözlemleri ve etik siber güvenlik testleriyle ilgilenen bağımsız teknik üretici.  
+Independent technical maker focused on VM setups, graphic/input observations, and ethical cybersecurity testing.
